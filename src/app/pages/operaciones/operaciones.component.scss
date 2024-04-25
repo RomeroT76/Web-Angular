@@ -1,0 +1,65 @@
+body.operaciones-page {
+    background-color: rgb(73, 199, 208); /* Color de fondo específico para esta página */
+}
+
+/* Estilos generales para todo el sitio */
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección de los elementos a columna */
+    padding: 20px;
+}
+
+.operacion {
+    margin-bottom: 20px; /* Agregar un margen inferior entre los contenedores */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 10px 5px 0px 2.5px #00000033;
+    text-align: center;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+    transition: background-color 0.3s ease;
+}
+
+.operacion:hover,
+.operacion:focus {
+    background-color: rgb(33, 53, 71);
+}
+
+.operacion:hover h2,
+.operacion:hover p {
+    color:#ffbc0e; /* Cambiar el color del texto al pasar el mouse sobre el contenedor */
+}
+
+.operacion h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px; /* Ajustar el tamaño de la fuente para el título */
+}
+
+.operacion p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.operacion img {
+    max-width: 8.1%;
+    height: auto;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: rgb(42, 127, 165);
+    color: #ffbc0e;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
