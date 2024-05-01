@@ -23,5 +23,13 @@
         <button class="numberBtn button" (click)="clickEvt((keys[10]))">.</button>
         <button class="operatorBtn button" id="eq" (click)="calculate((lsTxt))">=</button>
     </div>
+    <div class="log">
+        <h1>Operations Log</h1>
+        <ul>
+            @for(op of operations; track op){
+                <li>{{op}}</li>
+            }
+        </ul>
+    </div>
 </div>
 <footer>Programacion y Plataformas Web P64</footer>

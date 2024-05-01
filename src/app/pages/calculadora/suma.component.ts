@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogService } from '../../services/log.service';
 
 @Component({
     selector: 'app-suma',
@@ -12,6 +13,17 @@ export class SumaComponent {
     public oKeys: string[] = ['+', '-', '*', '/']
     public lsTxt: string = ''
     public usTxt: string = '0'
+    public operations: string[] = []
+    public exp: string = ''
+
+
+    constructor(private log: LogService) {
+
+    }
+
+    ngOnInit(): void {
+        this.operations = this.log.getHistory()
+    }
 
     clickEvt(value: string): void {
         if (this.lsTxt === '' && this.oKeys.includes(value, 0)) {
@@ -25,12 +37,13 @@ export class SumaComponent {
     calculate(expresion: string): void {
         try {
             this.usTxt = eval(expresion);
-            this.lsTxt = ''
         } catch (error) {
             this.lsTxt = this.lsTxt.substring(1, this.lsTxt.length)
             this.usTxt = eval(this.lsTxt)
-            this.lsTxt = ''
         }
+        this.exp = this.lsTxt + ' ' + '=' + ' ' + this.usTxt
+        this.log.addElement(this.exp)
+        this.lsTxt = ''
     }
 
     deleteChar(): void {
@@ -39,6 +52,10 @@ export class SumaComponent {
 
     clearDisplay(): void {
         this.lsTxt = ''
+    }
+
+    addOp(): void {
+        this.log.addElement(this.exp)
     }
 }
 
