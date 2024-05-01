@@ -1,39 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-</head>
-<body>
-    <div class="container">
-        <div class="calculator">
-            <div class="display">
-                <div class="upperSection"></div>
-                <div class="lowerSection">0</div>
-            </div>
-            <button class="col-2 cBtn button" id="c">C</button>
-            <button class="numberBtn button" id="del">&larr;</button>
-            <button class="operatorBtn button">/</button>
-            <button class="numberBtn button">7</button>
-            <button class="numberBtn button">8</button>
-            <button class="numberBtn button">9</button>
-            <button class="operatorBtn button">*</button>
-            <button class="numberBtn button">4</button>
-            <button class="numberBtn button">5</button>
-            <button class="numberBtn button">6</button>
-            <button class="operatorBtn button">-</button>
-            <button class="numberBtn button">1</button>
-            <button class="numberBtn button">2</button>
-            <button class="numberBtn button">3</button>
-            <button class="operatorBtn button">+</button>
-            <button class="col-2 button numberBtn">0</button>
-            <button class="numberBtn button">.</button>
-            <button class="operatorBtn button" id="eq">=</button>
+<div class="container">
+    <div class="calculator">
+        <div class="display">
+            <div class="upperSection">{{ usTxt }}</div>
+            <div class="lowerSection">{{ lsTxt }}</div>
         </div>
+        <button class="col-2 cBtn button" id="c" (click)="clearDisplay()">C</button>
+        <button class="numberBtn button" id="del" (click)="deleteChar()">&larr;</button>
+        <button class="operatorBtn button" (click)="clickEvt((oKeys[3]))">/</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[7]))">7</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[8]))">8</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[9]))">9</button>
+        <button class="operatorBtn button" (click)="clickEvt((oKeys[2]))">*</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[4]))">4</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[5]))">5</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[6]))">6</button>
+        <button class="operatorBtn button" (click)="clickEvt((oKeys[1]))">-</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[1]))">1</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[2]))">2</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[3]))">3</button>
+        <button class="operatorBtn button" (click)="clickEvt((oKeys[0]))">+</button>
+        <button class="col-2 button numberBtn" (click)="clickEvt((keys[0]))">0</button>
+        <button class="numberBtn button" (click)="clickEvt((keys[10]))">.</button>
+        <button class="operatorBtn button" id="eq" (click)="calculate((lsTxt))">=</button>
     </div>
-    <footer>Programacion y Plataformas Web P64</footer>
-</body>
-
-</html>
+</div>
+<footer>Programacion y Plataformas Web P64</footer>

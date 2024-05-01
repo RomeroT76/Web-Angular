@@ -1,15 +1,10 @@
-body {
-    margin: 0px;
-    background-color: rgb(73, 199, 208);
-    align-items: center;
-    justify-content: center;
-}
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: rgb(73, 199, 208);
+    border-radius: 20px;
 }
 
 .calculator {
@@ -83,4 +78,14 @@ body {
 
 .numberBtn {
     background-color: rgb(158, 158, 157);
+}
+
+footer {
+    background-color: rgb(42, 127, 165);
+    color: #ffbc0e;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
