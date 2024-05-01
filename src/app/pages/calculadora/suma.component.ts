@@ -23,8 +23,14 @@ export class SumaComponent {
     }
 
     calculate(expresion: string): void {
-        this.usTxt = eval(expresion);
-        this.lsTxt = ''
+        try {
+            this.usTxt = eval(expresion);
+            this.lsTxt = ''
+        } catch (error) {
+            this.lsTxt = this.lsTxt.substring(1, this.lsTxt.length)
+            this.usTxt = eval(this.lsTxt)
+            this.lsTxt = ''
+        }
     }
 
     deleteChar(): void {
